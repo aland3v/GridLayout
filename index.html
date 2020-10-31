@@ -14,23 +14,11 @@
   <style>
     .container{
       display: grid;
-      /* grid-template-columns: 25% 200px 25%;
-      grid-template-rows: 300px 300px; */
-      /*  grid-template: filas / columnas */
-      /* grid-template: 300px 100px  100px / 50% 200px 100px;
-      grid-template: 300px 100px 100px / repeat(4,1fr);
-      grid-template: 300px 100px 100px / repeat(4,minmax(200px,1fr));
-      grid-template: 300px 100px 100px / minmax(200px, 1fr) 1fr 1fr 1fr;
-       */
-      grid-template: 100px 1fr 150px / 200px 1fr;
-
-      /* column-gap: 30px;
-      row-gap: 30px; */
-      grid-gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 10px;
       height: 100vh; /* 100 viewport hight */
-      grid-template-areas: "header header"
-                           "left contenido"
-                           "footer footer";/*3filasx2cols*/
+      
     }
     
     .item{
@@ -39,38 +27,53 @@
       border: 1px solid red;      
     }
 
-    .item:nth-of-type(4) {
+    .item:nth-of-type(1) {
       background: blue;
-      /* todavía no funciona la "herencia" display: subgrid; */      
-      display: grid;
-      grid-template: 50px 50px 50px / 200px 200px 200px;
-      overflow: auto;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      /* No son columnas sino las lineas las que se cuentan */
+      /* entonces va desde la linea 1 a la 3 | | | */      
     }
 
-    .header{
-      grid-area: header;
+    .item:nth-of-type(8){
+      /* equivalente a grid-column-start y ...-end */
+      /* grid-column: 2 / 4; */ /*empieza en el 2 y termina en el 4*/
+      /* grid-column: 1 / span 2; */ /* q arranque en el uno y tome 2 espacios o COLUMNAS :)*/
+      grid-column: 1 / -1; /* truco para que tome todas las columnas */
     }
 
-    .left{
-      grid-area: left;
+    .item:nth-of-type(7){
+      grid-column: 2 / 4; 
     }
 
-    .contenido{
-      grid-area: contenido;
-    }
+    /* Definir el tamaño de las columnas 
+    dentro de un grid:
 
-    .footer{
-      grid-area: footer;
-    }
+    grid-column-start: 1;
+    grid-column-end: 3;
     
+    Para escribir esto en una sola linea:
+    grid-column: inicio / final;
+
+    Para usar por espacios o columnas: span #
+    Para usar el espacio de toda la columna usamos -1 
+    al final Ejemplo: grid-column: 1/ -1; */
   </style>
 </head>
 <body>
   <section class="container">
-    <div class="item header">header</div>
-    <div class="item left">left</div>
-    <div class="item contenido">contenido</div>
-    <div class="item footer">footer</div>    
+    <div class="item">item #1</div>
+    <div class="item">item #2</div>
+    <div class="item">item #3</div>
+    <div class="item">item #4</div>
+    <div class="item">item #5</div>
+    <div class="item">item #6</div>
+    <div class="item">item #7</div>
+    <div class="item">item #8</div>
+    <div class="item">item #9</div>
+    <div class="item">item #10</div>
+    <div class="item">item #11</div>
+    <div class="item">item #12</div>
   </section>
 </body>
 </html>
