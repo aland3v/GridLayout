@@ -14,9 +14,9 @@
   <style>
     .container{
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 5px;
       height: 100vh; /* 100 viewport hight */
       
     }
@@ -28,18 +28,27 @@
     }
 
     .item:nth-of-type(1) {
-      background: blue;
+      /* background: blue;
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 3; */
       /* No son columnas sino las lineas las que se cuentan */
       /* entonces va desde la linea 1 a la 3 | | | */      
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 2;
+    }
+    .item:nth-of-type(2) {
+      grid-column: 4 / span 2; /* Arranca en la linea 4*/
+      grid-row: 1 / span 2;
+    }
+    .item:nth-of-type(3) {
+      grid-column: 6 / span 2; /* Arranca en la linea 6 */
     }
 
     .item:nth-of-type(8){
       /* equivalente a grid-column-start y ...-end */
       /* grid-column: 2 / 4; */ /*empieza en el 2 y termina en el 4*/
       /* grid-column: 1 / span 2; */ /* q arranque en el uno y tome 2 espacios o COLUMNAS :)*/
-      grid-column: 1 / -1; /* truco para que tome todas las columnas */
+      /* grid-column: 1 / -1; */ /* truco para que tome todas las columnas */
     }
 
     .item:nth-of-type(7){
@@ -67,13 +76,7 @@
     <div class="item">item #3</div>
     <div class="item">item #4</div>
     <div class="item">item #5</div>
-    <div class="item">item #6</div>
-    <div class="item">item #7</div>
-    <div class="item">item #8</div>
-    <div class="item">item #9</div>
-    <div class="item">item #10</div>
-    <div class="item">item #11</div>
-    <div class="item">item #12</div>
+    
   </section>
 </body>
 </html>
