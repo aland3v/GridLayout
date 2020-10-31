@@ -4,21 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script>
+    function saludar(persona){
+      console.log(`Hola me llamo ${persona.nombre}`)
+    }
+
+    saludar({nombre:"alan quispe"})
+  </script>
   <style>
     .container{
       display: grid;
       /* grid-template-columns: 25% 200px 25%;
       grid-template-rows: 300px 300px; */
       /*  grid-template: filas / columnas */
-
-      grid-template: 300px 100px  100px / 50% 200px 100px;
+      /* grid-template: 300px 100px  100px / 50% 200px 100px;
       grid-template: 300px 100px 100px / repeat(4,1fr);
       grid-template: 300px 100px 100px / repeat(4,minmax(200px,1fr));
       grid-template: 300px 100px 100px / minmax(200px, 1fr) 1fr 1fr 1fr;
-      
-      column-gap: 30px;
-      row-gap: 30px;
-      grid-gap: 30px 30px;
+       */
+      grid-template: 100px 1fr 150px / 200px 1fr;
+
+      /* column-gap: 30px;
+      row-gap: 30px; */
+      grid-gap: 10px;
+      height: 100vh; /* 100 viewport hight */
+      grid-template-areas: "header header"
+                           "left contenido"
+                           "footer footer";/*3filasx2cols*/
     }
     
     .item{
@@ -35,31 +47,30 @@
       overflow: auto;
     }
 
-    .item .item{
-      background: yellow;
+    .header{
+      grid-area: header;
     }
+
+    .left{
+      grid-area: left;
+    }
+
+    .contenido{
+      grid-area: contenido;
+    }
+
+    .footer{
+      grid-area: footer;
+    }
+    
   </style>
 </head>
 <body>
   <section class="container">
-    <div class="item">Contenido 1</div>
-    <div class="item">Contenido 2</div>
-    <div class="item">Contenido 3</div>
-    <div class="item">
-      <div class="item">subitem #1</div>
-      <div class="item">subitem #2</div>
-      <div class="item">subitem #3</div>
-      <div class="item">subitem #4</div>
-      <div class="item">subitem #5</div>
-    </div>
-    <div class="item">Contenido 5</div>
-    <div class="item">Contenido 6</div>
-    <div class="item">Contenido 7</div>
-    <div class="item">Contenido 8</div>
-    <div class="item">Contenido 9</div>
-    <div class="item">Contenido 10</div>
-    <div class="item">Contenido 11</div>
-    <div class="item">Contenido 12</div>
+    <div class="item header">header</div>
+    <div class="item left">left</div>
+    <div class="item contenido">contenido</div>
+    <div class="item footer">footer</div>    
   </section>
 </body>
 </html>
