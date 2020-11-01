@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container{
+    display: grid;
+    grid-template: 100px 100px auto 100px / 2fr 1fr;
+    grid-template-areas: "header header"
+                          "nav nav"
+                          "section aside"
+                          "footer footer";
+    
+  }
+
+  .item{
+    background-color: lime;
+    border: 1px solid yellow;
+  }
+
+  .header{
+    grid-area: header;
+  }
+
+  .nav{
+    grid-area: nav;
+  }
+
+  .section{
+    grid-area: section;
+  }
+
+  .aside{
+    grid-area: aside;
+  }
+  
+  .footer{
+    grid-area: footer;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="item header">HEADER</div>
+    <div class="item nav">NAV</div>
+    <div class="item section">
+      <div class="item article">
+        ARTICLE
+        <img src="foto.jpg" width="100px" height="100px" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem culpa adipisci est omnis voluptas aspernatur illum quibusdam delectus, aperiam architecto enim dolores veniam, impedit at? Vitae quas dolores corrupti.</p>
+      </div>
+      <div class="item article">
+        ARTICLE
+        <img src="foto.jpg" width="100px" height="100px" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem culpa adipisci est omnis voluptas aspernatur illum quibusdam delectus, aperiam architecto enim dolores veniam, impedit at? Vitae quas dolores corrupti.</p>
+      </div>
+    </div>
+    <div class="item aside">ASIDE</div>
+    <div class="item footer">FOOTER</div>
+  </div>
+</body>
+
+</html>
