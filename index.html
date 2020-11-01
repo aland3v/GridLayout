@@ -16,17 +16,19 @@
       display: grid;
       gap: 5px;
       height: 100vh;
-      grid-template-columns: repeat(3,1fr);
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(3,200px);
+      grid-template-rows: repeat(4, 100px);
 
-      /* Al asignar start, end, center el contenido pasa a 
-      ocupar un tamaño ajustado a su contenido aunque las
-      celdas siguen teniendo mismo tamanio */      
-      /* Alineado Horizontal start, end, center, stretch(defecto) */
-      justify-items: center;
-
-      /* Alineado Vertical start, end, center, stretch */
-      align-items: center;
+      /* justify-content: start end center stretch space-around space-between space-evenly;
+      para justify-content:  y align-content tienen los mismos valores */
+      justify-content: space-around; /* Similar al efecto de los margenes */
+      justify-content: space-evenly;/* distribucion homogenea del espacio*/
+      justify-content: space-between; /* spaciado interno */
+      align-content: space-between;
+      align-content: space-around;
+      align-content: space-evenly;
+      align-content: center;
+      justify-content: center;
     }
 
     .item{
@@ -36,8 +38,6 @@
     }
 
     .item:nth-of-type(5){
-      align-self: start;
-      justify-self: start;
     }
   </style>
 </head>
