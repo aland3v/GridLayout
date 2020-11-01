@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: grid;
+      /* grid-template-columns: 20% auto 20%;
+      grid-template-rows: 100px 100px 200px; */
+      grid-template: 100px 100px 200px / 25% auto 25%;
+    }
+
+    .item{
+      background: blue;
+      border: 1px solid lime;
+    }
+
+    .item:nth-of-type(4){
+      background-color: greenyellow;
+      display: grid;
+      grid-template: 50px 50px 50px / 100px 100px;
+      overflow: auto;
+    }
+
+    .item .item{
+      background-color: lime;
+    }
+
+    .item:nth-of-type(9){
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Item #1</div>
+  <div class="item">Item #2</div>
+  <div class="item">Item #3</div>
+  <div class="item">
+    <div class="item">SubItem #1</div>
+    <div class="item">SubItem #2</div>
+    <div class="item">SubItem #3</div>
+    <div class="item">SubItem #4</div>
+    <div class="item">SubItem #5</div>
+  </div>
+  <div class="item">Item #5</div>
+  <div class="item">Item #6</div>
+  <div class="item">Item #7</div>
+  <div class="item">Item #8</div>
+  <div class="item">Item #9</div>
+  <div class="item">Item #10</div>
+  <div class="item">Item #11</div>
+  <div class="item">Item #12</div>  
+  </div>
+</body>
+</html>
