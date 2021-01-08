@@ -1,60 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    function saludar(persona){
-      console.log(`Hola me llamo ${persona.nombre}`)
-    }
-
-    saludar({nombre:"alan quispe"})
-  </script>
-  <style>
-    .container{
-      display: grid;
-      gap: 5px;
-      height: 100vh;
-      grid-template-columns: repeat(3,200px);
-      grid-template-rows: repeat(4, 100px);
-
-      /* justify-content: start end center stretch space-around space-between space-evenly;
-      para justify-content:  y align-content tienen los mismos valores */
-      justify-content: space-around; /* Similar al efecto de los margenes */
-      justify-content: space-evenly;/* distribucion homogenea del espacio*/
-      justify-content: space-between; /* spaciado interno */
-      align-content: space-between;
-      align-content: space-around;
-      align-content: space-evenly;
-      align-content: center;
-      justify-content: center;
-    }
-
-    .item{
-      background-color: lightblue;
-      padding: 10px;
-      border: 1px solid red;
-    }
-
-    .item:nth-of-type(5){
-    }
-  </style>
+  <title>GridLayout</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="container">
-    <div class="item">Item #1</div>
-    <div class="item">Item #2</div>
-    <div class="item">Item #3</div>
-    <div class="item">Item #4</div>
-    <div class="item">Item #5</div>
-    <div class="item">Item #6</div>
-    <div class="item">Item #7</div>
-    <div class="item">Item #8</div>
-    <div class="item">Item #9</div>
-    <div class="item">Item #10</div>
-    <div class="item">Item #11</div>
-    <div class="item">Item #12</div>
-  </section>
+  <div class="container">
+    <nav class="menu">
+      <h3>Escoge una opcion:</h3>
+      <ul>
+        <li><a href="./instagram/index.html">Instagram</a></li>
+        <li><a href="./pinterest/index.html">Pinterest</a></li>
+        <li><a href="./platzilanding/index.html">Platzi landing</a></li>
+      </ul>
+    </nav>
+  </div>
 </body>
 </html>
